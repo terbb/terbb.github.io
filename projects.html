@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<div class="row">
+    <p class="about-title">PROJECTS</p>
+</div>
+
+{% for post in site.categories['Project'] %}
+  {% assign mod = forloop.index0 | modulo: 2 %}
+  {% if mod == 0 %}
+    <div class="row">
+  {% endif %}
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              {% capture thumbnailPath %}{{ post.date | date: "%Y-%m-%d" }}-{{ post.title | slugify }}/thumbnail.png{% endcapture %}
+              <img src="/assets/project/{{ thumbnailPath }}"/>
+              <span class="card-title title" style="font-weight: 800;text-shadow: 1px 1px 2px black;">{{ post.title }}</span>
+              <span class="card-title" style="font-weight: 50;text-shadow: 1px 1px 2px black;">{% for technology in post.technologies %}
+              {{ technology }}
+              {% endfor %}</span>
+            </div>
+            <div class="card-content">
+              {% include project-type.html type=post.type %}
+              <p>{{ post.excerpt }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ post.url | prepend: site.url }}">Details</a>
+              <a href="{{ post.github }}">Github</a>
+              {% if post.blog-post %}
+              <a href="{{ post.blog-post }}">Blog Post</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        {% if mod == 1 %}
+          </div>
+        {% endif %}
+{% endfor %}

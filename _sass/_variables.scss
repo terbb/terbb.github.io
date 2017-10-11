@@ -1,0 +1,27 @@
+$open-sans: 'Open Sans', sans-serif;
+$pt-sans: 'PT Sans Caption', sans-serif;
+$muli: 'Muli', sans-serif;
+$cambay: 'Cambay', sans-serif;
+$baloo: 'Baloo Paaji', cursive;
+$londrina: 'Londrina Solid', cursive;
+$source-sans-pro: 'Source Sans Pro', sans;
+$press-start: 'Press Start 2P', cursive;
+$raleway: 'Raleway', sans-serif;
+$lato: 'Lato', sans-serif;
+
+
+$default-color: #555;
+$default-shade: #353535;
+$default-tint: #aaa;
+$grey-1: #979797;
+$grey-2: #e5e5e5;
+$grey-3: #f9f9f9;
+$white: #fff;
+$blue: #4a9ae1;
+$shadow-color: rgba(0, 0, 0, .2);
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+          transition: $args;
+}

@@ -1,0 +1,12 @@
+{% case include.score %}
+  {% when 1 %}
+     <i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i>
+  {% when 2 %}
+    <i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i>
+  {% when 3 %}
+    <i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i>
+  {% when 4 %}
+    <i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i>
+  {% else %}
+  <i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i><i class="fa fa-star" aria-hidden="true" style="color: #B71717;"></i>
+{% endcase %}

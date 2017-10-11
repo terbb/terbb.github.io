@@ -1,0 +1,34 @@
+# Permalinks
+permalink:      /:year-:month-:day/:title
+
+# Setup
+theme: terb-theme
+title:          the life of terb
+baseurl:        ""
+url:            "https://terbb.github.io"
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        :compressed
+
+# Build settings
+markdown:       kramdown
+
+# About
+author:
+  name:         Trevin Wong
+  url:
+  email:        trevinwong@gmail.com
+
+# Custom vars
+github: https://github.com/terbb
+
+# Default layouts
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

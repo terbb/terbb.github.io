@@ -1,0 +1,7 @@
+{% case include.type %}
+  {% when 'Game' %}
+    <p class="game" style="color: #28A745;"><i class="fa fa-gamepad" aria-hidden="true"></i> Game</p>
+  {% when 'App' %}
+    <p class="game" style="color: #6F42C1;"><i class="fa fa-mobile" aria-hidden="true"></i></i> App</p>
+  {% else %}
+{% endcase %}
