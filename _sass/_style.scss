@@ -1,10 +1,10 @@
 // Begin general styling for the website.
 html {
  font-family: $raleway;
- font-size: 16px;
+ font-size: 1em;
 
  @media (min-width: 600px) {
-   font-size: 18px;
+   font-size: 1.125em;
  }
 }
 
@@ -29,8 +29,8 @@ html {
 // Begin styling for default layout.
 //// Begin styling for navigation bar.
 .nav {
-  margin-top: 30px;
-  margin-bottom: 80px;
+  margin-top: 1.250em;
+  margin-bottom: 6em;
 
    ul {
      list-style-type: none;
@@ -48,9 +48,9 @@ html {
 
     a {
     color: #B71717;
-    padding: 0px 16px;
+    padding: 0px 1.000em;
     font-family: $baloo;
-    font-size: 23px;
+    font-size: 1.438em;
    }
 }
 
@@ -59,8 +59,8 @@ html {
 .social {
  list-style-type: none;
  margin: 0;
- padding: 5px;
- margin-right: 5px;
+ padding: 0.208em;
+ margin-right: 0.208em;
  text-align: center;
 
  li {
@@ -70,7 +70,7 @@ html {
  a li i {
   @include transition(all .2s ease-out);
   color: #636363;
-  padding: 0 6px;
+  padding: 0 0.208em;
 
   &:hover,
   &:focus {
@@ -98,8 +98,8 @@ html {
  font-family: $raleway;
  text-align: center;
  color: #636363;
- margin: 0px 0px 20px;
- font-size: 15px;
+ margin: 0px 0px 1.250em;
+ font-size: 0.938em;
  font-weight: 900;
 }
 
@@ -108,15 +108,14 @@ html {
 .about {
   &-title {
   font-family: $lato;
-  font-size: 2.4rem;
+  font-size: 2em;
   font-weight: 700;
   margin: 0;
   color: black;
   text-align: left;
-  border-bottom: 4px solid #B71717;
-  margin-bottom: 30px;
-  padding-bottom: 5px;
-  letter-spacing: 1.5px;
+  border-bottom: 0.4rem solid #B71717;
+  margin-bottom: 1em;
+  padding-bottom: 0.3em;
 }
 
  &-text {
@@ -136,7 +135,7 @@ html {
   &-info {
     color: $default-tint;
     font-family: $open-sans;
-    letter-spacing: .5px;
+    letter-spacing: .125em;
     text-align: center;
 
     span {
@@ -151,7 +150,6 @@ html {
     margin: 0;
     text-align: center;
     font-weight: bold;
-    letter-spacing: .1px;
   }
 
   &-line {
@@ -174,17 +172,17 @@ html {
 
 .catalogue {
   &-item {
-    border-bottom: 2px dashed #B71717;
+    border-bottom: 0.1em dashed #B71717;
     color: $default-color;
-    padding: 20px 0px;
+    padding: 1.250em 0px;
     margin: 0;
   }
 
   &-time {
     color: $grey-1;
     font-family: $source-sans-pro;
-    font-size: 13px;
-    letter-spacing: 2px;
+    font-size: 0.813em;
+    letter-spacing: 0.083em;
   }
 
   &-title {
@@ -194,26 +192,26 @@ html {
     font-weight: bold;
     font-size: 2rem;
     margin: 0;
-    margin-left: -2px;
+    margin-left: -0.083em;
   }
 
   &-content {
-    margin: 5px 0;
+    margin: 0.208em 0;
     color: #757575;
     font-family: $raleway;
     font-size: 1rem;
   }
 
   &-image {
-    width: 110px;
-    height: 110px;
+    width: 6.5em;
+    height: 6.5em;
   }
 }
 
 // Begin styling for cards on projects.
 
 .title {
-  margin: 30px 0px;
+  margin: 1.250em 0px;
 }
 
 // Begin styling for landing page.
