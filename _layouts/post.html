@@ -13,7 +13,7 @@ layout: default
   <h1 class="post-title">{{ page.title | upcase }}</h1>
   <div class="post-line"></div>
   {% if page.project-post %}
-  <b style="float: right;">PROJECT: <a href="{{ page.project-post }}"><span style="color:#B71717;">{{ page.project | upcase }}</span></a></b>
+  <h5 style="float: right; margin:0;">PROJECT: <a href="{{ page.project-post }}"><span style="color:#B71717;">{{ page.project | upcase }}</span></a></h5>
   {% endif %}
   {{ content }}
 

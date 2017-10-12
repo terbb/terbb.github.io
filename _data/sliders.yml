@@ -1,12 +1,53 @@
-- selector: example_slider
+- selector: geopost_slider
   captions: true
   images:
-    - src: /img/1.jpg
-      alt: image one
-    - src: /img/2.jpg
-      alt: image two
-    - src: /img/3.jpg
-      alt: image three
+    - src: /assets/project/2017-10-08-geopost/screenshot1.jpg
+      alt: new post
+    - src: /assets/project/2017-10-08-geopost/screenshot2.jpg
+      alt: post feed
+    - src: /assets/project/2017-10-08-geopost/screenshot3.jpg
+      alt: menu bar
+    - src: /assets/project/2017-10-08-geopost/screenshot4.jpg
+      alt: viewing a post
+    - src: /assets/project/2017-10-08-geopost/screenshot5.jpg
+      alt: map view
   settings:
     height: "'auto'"
-    effect: "'fade'"
+    effect: "'slide'"
+    keyboardNav: true
+
+- selector: teacher_slider
+  captions: true
+  images:
+    - src: /assets/project/2017-10-09-teacher-for-a-day/screenshot1.png
+      alt: title screen
+    - src: /assets/project/2017-10-09-teacher-for-a-day/screenshot2.png
+      alt: the bully
+    - src: /assets/project/2017-10-09-teacher-for-a-day/screenshot3.png
+      alt: the overly enthusiastic student
+    - src: /assets/project/2017-10-09-teacher-for-a-day/screenshot4.png
+      alt: the know-it-all
+    - src: /assets/project/2017-10-09-teacher-for-a-day/screenshot5.png
+      alt: the shy student
+    - src: /assets/project/2017-10-09-teacher-for-a-day/screenshot6.png
+      alt: the eal student
+  settings:
+    height: "'auto'"
+    effect: "'slide'"
+    keyboardNav: true
+
+- selector: papercut_slider
+  captions: true
+  images:
+    - src: /assets/project/2017-10-08-paper-cut/screenshot1.png
+      alt: instructions screen
+    - src: /assets/project/2017-10-08-paper-cut/screenshot2.png
+      alt: a passable cut
+    - src: /assets/project/2017-10-08-paper-cut/screenshot3.png
+      alt: a not very good cut
+    - src: /assets/project/2017-10-08-paper-cut/screenshot4.png
+      alt: game over screen
+  settings:
+    height: "'auto'"
+    effect: "'slide'"
+    keyboardNav: true

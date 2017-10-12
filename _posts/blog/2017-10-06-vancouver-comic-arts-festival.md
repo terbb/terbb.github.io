@@ -14,4 +14,6 @@ In the end, I have to say that presenting at Vancouver Comic Arts Festival broug
 
 Finally, I was glad to be able to play some truly polished indie games, most notably Iron Tides and Celeste. Those were two extremely high quality games and if I had some time to kill, I'd definitely buy both of those. Of course, watching people enjoy playing Paper Cut was also pretty heart-warming. Some guy even dragged over his poor buddy insisting he had to play it.
 
+{% include image.html name="photo1.png" %}
+
 Special thanks to Jay Friso for letting me know about this opportunity. DASH is legit a fun game. Check it out people!

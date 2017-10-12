@@ -1,30 +1,73 @@
 // Begin general styling for the website.
+* {
+  @include box-sizing;
+  line-height: 1.5;
+}
+
+html,
+body {
+  color: $default-color;
+  margin: 0;
+  padding: 0;
+}
+
 html {
- font-family: $raleway;
- font-size: 1em;
+  font-family: $raleway;
+  font-size: 20px;
 
- @media (min-width: 600px) {
-   font-size: 1.125em;
- }
-}
-
-.container {
- margin: 0 auto;
- padding: 30px 0;
- max-width: 1280px;
- width: 90%;
-}
-@media only screen and (min-width: 601px) {
- .container {
-   width: 85%;
- }
-}
-@media only screen and (min-width: 993px) {
- .container {
-   width: 50%;
- }
+  @media (min-width: 600px) {
+    font-size: 20px;
+  }
 }
 
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $default-shade;
+  font-family: $open-sans;
+  line-height: normal;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 0.3em solid $main-color;
+  color: $grey-1;
+  margin: .8rem 0;
+  padding: .5rem 1rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 600px) {
+    padding: 0 5rem 0 1.25rem;
+  }
+}
+
+img {
+  display: block;
+  margin: 0 0 1rem;
+  max-width: 100%;
+}
+
+td {
+  vertical-align: top;
+}
 
 // Begin styling for default layout.
 //// Begin styling for navigation bar.
@@ -146,7 +189,6 @@ html {
   &-title {
     color: #B71717;
     font-family: $lato;
-    font-size: 2.5rem;
     margin: 0;
     text-align: center;
     font-weight: bold;
