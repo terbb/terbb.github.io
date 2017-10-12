@@ -18,7 +18,7 @@ Teacher for a Day is a game meant to simulate what it's like to live a day in th
 
 Occasionally, students will spawn inside the classroom, and will need you, the teacher to look after them! Talk to them to initiate a conversation, and make sure you select the right dialogue to gain success points, or risk losing the game either through saying something wrong or letting your success bar hit zero.
 
-You can also interact with the computer to put your grades in, or drink coffee, just like a real teacher would.
+This was built using RPG Maker MV, and the plugin code was written in Javascript.
 
 *Download the game:*
 
