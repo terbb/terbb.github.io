@@ -12,6 +12,8 @@ image_sliders:
   - teacher_slider
 ---
 
+**Winner of Second Place at Eduhacks!!**
+
 ### Description:
 
 Teacher for a Day is a game meant to simulate what it's like to live a day in the life of a teacher, as people outside of the field of education are often unaware of what it is teachers really do. In the game itself, you deal with a small portion of what we imagine teacher's deal with: managing students.
