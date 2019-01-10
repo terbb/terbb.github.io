@@ -1,10 +1,13 @@
 # terb-theme
+This is a custom theme for Jekyll that I built from scratch. I learned a lot of CSS.
 
-This is my very own custom theme that I built from scratch. Not much else to say. It houses my blog, projects, games, resume, etc. pretty much everything. Built with a copious amount of red because I like red.
+## To-do
+* Clean up CSS into SCSS
+* Re-work everything into one page
+* Make mobile-friendly
 
+## Technologies
 
-## Technologies(?)
-
-Other than Jekyll (obviously), Materialize CSS Framework, Font-Awesome and Google Fonts.
+Jekyll, Materialize CSS Framework, Font-Awesome and Google Fonts.
 
 
