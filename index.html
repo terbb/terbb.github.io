@@ -2,11 +2,98 @@
 layout: default
 ---
 
-<div class="valign-wrapper center-align" style="height:22.222em;background-color:#B71717;">
-  <div class="center-align landing-info">
-    <section class="landing-name">TREVIN WONG</section>
-    <section class="landing-description">3rd Year Computer Science</section>
-    <section class="landing-skills">Lua | Javascript | Java | C</section>
-    <section class="landing-tools">Android Studio | Unity | Love2D</section>
+<div class="row">
+	<h1 class="main_title">
+    Trevin Wong
+	</h1>
+  <div>
+    <ul class="social">
+      <a href="https://github.com/terbb"><li><i class="fa fa-github-alt fa-4x" aria-hidden="true"></i></li></a>
+      <a href="https://www.linkedin.com/in/trevin-wong/"><li><i class="fa fa-linkedin fa-4x" aria-hidden="true"></i></li></a>
+    </ul>
   </div>
 </div>
+
+<div class="row">
+	<h2>About Me</h2>	
+  <p>Hello potential employer,</p>
+	<p>Here's a list about me:</p>
+	<ul>
+		<li>4th year CPSC student at UBC, proficient in C++, likes video games, computer graphics and VR</li>
+		<li>Released a game <a href="https://play.google.com/store/apps/details?id=com.trevinwong.papercut&hl=en">(Paper Cut)</a> on Play Store</li>
+		<li>Favorite courses are <a href="https://www.cs.ubc.ca/~sheffa/games_course/Vjan19/">Video Game Programming</a> and <a href="https://www.ugrad.cs.ubc.ca/~cs490/2018W2/">Problem Solving in Computer Science</a></li>
+		<li>I really like this computer graphics <a href="https://www.cs.ubc.ca/~van/papers/2018-TOG-deepMimic/index.html">paper</a>, though I still don't understand much</li>
+		<li>Hopes to one day study and develop more realistic <a href="https://www.youtube.com/watch?v=r0RemgIbh8Q&list=PL19CTPR_NFYat8FUj3e-DuMA6aKgAsSWk&index=2">melee combat in VR</a></li>
+		<li>My favorite VR game is <a href="https://www.youtube.com/watch?v=FoErwaxy3HE">Rec Room</a></li>
+		<li>My favorite games are <a href="https://www.youtube.com/watch?v=1w7wQx5-msg">WC3</a> and <a href="https://www.youtube.com/watch?v=SD0uiIF2shA">SSBM</a></li>
+		<li>Part of a community trying to revive a Starcraft 2 custom map called <a href="https://www.youtube.com/watch?v=CpFuJsG5-F4">Smashcraft</a></li>
+		<li>Can take long walks on the beach with you, if that's something you like</li>
+	</ul>
+
+  <p>Here's my (outdated) <b><a href="/assets/resume.pdf">resume</a></b>.</p>
+
+	If you're not looking to hire me... you can check out my blog, I guess (it's at the bottom).
+	I write about my thoughts on video games and other misc. stuff like hackathons I visit.
+</div>
+
+<div class="row">
+<h2>Projects</h2>
+</div>
+
+<div class="row">
+{% for post in site.categories['Project'] %}
+  {% assign mod = forloop.index0 | modulo: 2 %}
+  {% if mod == 0 %}
+    <div class="row">
+  {% endif %}
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              {% capture thumbnailPath %}{{ post.date | date: "%Y-%m-%d" }}-{{ post.title | slugify }}/thumbnail.png{% endcapture %}
+              <img src="/assets/project/{{ thumbnailPath }}"/>
+              <span class="card-title title" style="font-weight: 800;text-shadow: 1px 1px 2px black;">{{ post.title }}</span>
+              <span class="card-title" style="font-weight: 50;text-shadow: 1px 1px 2px black;">{% for technology in post.technologies %}
+              {{ technology }}
+              {% endfor %}</span>
+            </div>
+            <div class="card-content">
+              {% include project-type.html type=post.type %}
+              <p>{{ post.excerpt }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ post.url | prepend: site.url }}">Details</a>
+              <a href="{{ post.github }}">Github</a>
+              {% if post.blog-post %}
+              <a href="{{ post.blog-post }}">Blog Post</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        {% if mod == 1 %}
+          </div>
+        {% endif %}
+{% endfor %}
+</div>
+               
+
+<div class="row"> 
+<h2>Blog</h2>
+</div>
+
+  {% for post in site.categories['Blog'] %}
+  <div class="row catalogue-item">
+
+          {% capture thumbnailPath %}{{ post.date | date: "%Y-%m-%d" }}-{{ post.title | slugify }}/thumbnail.png{% endcapture %}
+          <div class="col s2 left-align">
+            <img class="catalogue-image" src="/assets/blog/{{ thumbnailPath }}"/>
+          </div>
+          <div class="col s10 left-align">
+              <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+          <a href="{{ post.url | prepend: site.url }}"><p class="catalogue-title">{{ post.title }}</p></a>
+            <p class="catalogue-content">{{ post.excerpt }}</p>
+          </div>
+
+  </div>
+  {% endfor %}
+                           

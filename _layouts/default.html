@@ -3,10 +3,6 @@
 <header>
 <div>
   <ul class="nav right-align" style="margin-right:3em;">
-    <a href="/" style="float:left;margin-left:3em;">trevin wong</a>
-    <li><a href="/blog">blog</a><li>
-    <li><a href="/projects">projects</a><li>
-    <li><a href="/about">about</a><li></span>
     </div>
   </ul>
 
@@ -15,25 +11,15 @@
 
 
 <main>
-  {% if page.url == "/" %}
-    {{ content }}
-  {% else %}
   <div class="container">
     {{ content }}
   </div>
-  {% endif %}
 </main>
 
 
-      <footer class="page-footer white">
-        <div>
-          <ul class="social">
-            <a href="https://github.com/terbb"><li><i class="fa fa-github-alt fa-4x" aria-hidden="true"></i></li></a>
-            <a href="https://www.linkedin.com/in/trevin-wong/"><li><i class="fa fa-linkedin fa-4x" aria-hidden="true"></i></li></a>
-          </ul>
-        </div>
-        </div>
-          <p class="meta-info">© 2017 Trevin Wong</p>
-      </footer>
+<footer class="page-footer white">
+	</div>
+		<p class="meta-info">© 2017 Trevin Wong</p>
+</footer>
 
 {% include footer.html %}

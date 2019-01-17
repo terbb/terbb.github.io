@@ -12,12 +12,22 @@ body {
 }
 
 html {
-  font-family: $raleway;
-  font-size: 20px;
+  font-family: $regular_text;
+  font-size: 1em;
 
   @media (min-width: 600px) {
-    font-size: 20px;
+    font-size: 1em;
   }
+}
+
+li {
+  list-style-type:disc!important;
+  margin-left:1.5em;   
+}
+
+.container {
+	padding-left: 15em;
+	padding-right: 15em;
 }
 
 body {
@@ -31,8 +41,24 @@ h4,
 h5,
 h6 {
   color: $default-shade;
-  font-family: $open-sans;
+  font-family: $header_text;
   line-height: normal;
+}
+
+h1 { 
+  font-family: $header_text;
+  font-size: 3.5em;
+  font-weight: 400;
+	color: #B71717;
+  text-align: center;
+  margin-bottom: 0em;
+}
+
+h2 { 
+  font-family: $header_text;
+  font-size: 2em;
+	color: $default-shade;
+  margin-bottom: 0em;
 }
 
 a {
@@ -70,40 +96,12 @@ td {
 }
 
 // Begin styling for default layout.
-//// Begin styling for navigation bar.
-.nav {
-  margin-top: 1.250em;
-  margin-bottom: 6em;
-
-   ul {
-     list-style-type: none;
-   }
-
-   li {
-    @include transition(all .2s ease-out);
-    display: inline;
-
-    &:hover a,
-    &:focus a {
-
-    }
-   }
-
-    a {
-    color: #B71717;
-    padding: 0px 1.000em;
-    font-family: $baloo;
-    font-size: 1.438em;
-   }
-}
-
 //// Begin styling for footer bar.
 
 .social {
  list-style-type: none;
  margin: 0;
- padding: 0.208em;
- margin-right: 0.208em;
+ padding: 0;
  text-align: center;
 
  li {
@@ -113,7 +111,7 @@ td {
  a li i {
   @include transition(all .2s ease-out);
   color: #636363;
-  padding: 0 0.208em;
+  padding: 0;
 
   &:hover,
   &:focus {
@@ -138,36 +136,27 @@ td {
 }
 
 .meta-info {
- font-family: $raleway;
+ font-family: $regular_text;
  text-align: center;
+ margin: 0;
+ margin-bottom: 2em;
+ padding: 0;
  color: #636363;
- margin: 0px 0px 1.250em;
- font-size: 0.938em;
+ font-size: 1.5em;
  font-weight: 900;
 }
 
 // Begin styling for about page.
 
-.about {
-  &-title {
-  font-family: $lato;
-  font-size: 2em;
-  font-weight: 700;
+.main_subtitle{
+  font-family: $regular_text;
+	color: $default-color;
+  font-size: 1.2em;
   margin: 0;
-  color: black;
-  text-align: left;
-  border-bottom: 0.4rem solid #B71717;
-  margin-bottom: 1em;
-  padding-bottom: 0.3em;
-}
-
- &-text {
-   font-family: $lato;
-   font-size: 3rem;
-   font-weight: bold;
-   margin: 0;
-   text-align: center;
- }
+	padding: 0;
+  text-align: center;
+  margin-bottom: 0.1em;
+  padding-bottom: 0em;
 }
 
 
@@ -177,7 +166,7 @@ td {
 
   &-info {
     color: $default-tint;
-    font-family: $open-sans;
+    font-family: $regular_text;
     letter-spacing: .125em;
     text-align: center;
 
@@ -188,7 +177,7 @@ td {
 
   &-title {
     color: #B71717;
-    font-family: $lato;
+    font-family: $regular_text;
     margin: 0;
     text-align: center;
     font-weight: bold;
@@ -222,7 +211,7 @@ td {
 
   &-time {
     color: $grey-1;
-    font-family: $source-sans-pro;
+    font-family: $time_text;
     font-size: 0.813em;
     letter-spacing: 0.083em;
   }
@@ -230,17 +219,16 @@ td {
   &-title {
     color: #B71717;
     display: block;
-    font-family: $lato;
+    font-family: $regular_text;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2em;
     margin: 0;
-    margin-left: -0.083em;
   }
 
   &-content {
     margin: 0.208em 0;
     color: #757575;
-    font-family: $raleway;
+    font-family: $regular_text;
     font-size: 1rem;
   }
 
@@ -254,38 +242,4 @@ td {
 
 .title {
   margin: 1.250em 0px;
-}
-
-// Begin styling for landing page.
-
-.landing {
-
-  &-info {
-    color: white;
-    width: 100%;
-  }
-
-  &-name {
-    font-family: $lato;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: -1rem;
-  }
-
-  &-description {
-    font-family: $muli;
-    font-size: 2rem;
-  }
-
-  &-skills {
-    margin-top: 0.8rem;
-    font-family: $muli;
-    font-size: 1rem;
-  }
-
-  &-tools {
-    margin-top: 0.1rem;
-    font-family: $muli;
-    font-size: 1rem;
-  }
 }
