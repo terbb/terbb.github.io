@@ -1,0 +1,41 @@
+{% assign min = 0 %}
+{% assign max = 11 %}
+{% assign diff = max | minus: min %}
+{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+
+{% if randomNumber == 0 %}
+Arbitrary subtitle to make the header look better! *guitar solo*
+{% endif %}
+{% if randomNumber == 1 %}
+If you're reading this, you're the 300,000,000th person to read this! Click here for your prize!
+{% endif %}
+{% if randomNumber == 2 %}
+I believe that Piazza is the new FB.
+{% endif %}
+{% if randomNumber == 3 %}
+When you're thinking, you're actually just talking to yourself.
+{% endif %}
+{% if randomNumber == 4 %}
+SC2 is free, play Smashcraft today!
+{% endif %}
+{% if randomNumber == 5 %}
+I'm not gonna run away and I never go back on my word, that's my Javascript way!
+{% endif %}
+{% if randomNumber == 6 %}
+Variety is the spice of life. You're reading the 6th random subtitle.
+{% endif %}
+{% if randomNumber == 7 %}
+In the beginning, there was nothing. Dog said, "woof!"
+{% endif %}
+{% if randomNumber == 8 %}
+Did you know you can die from eating cucumbers?
+{% endif %}
+{% if randomNumber == 9 %}
+How much would you pay to read all the random subtitles?
+{% endif %}
+{% if randomNumber == 10 %}
+Anything worth doing is worth overdoing.
+{% endif %}
+{% if randomNumber == 11 %}
+Did you look at my GitHub to read all the random subtitles? (note: please don't)
+{% endif %}
