@@ -1,6 +1,6 @@
 ---
 title: "Migration to Jekyll!"
-excerpt: "We've done it boys - we've finally moved to Jekyll. The days of /wp-admin are past."
+excerpt: "No more wordpress!"
 categories: Blog
 ---
 

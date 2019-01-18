@@ -58,7 +58,6 @@ h2 {
   font-family: $header_text;
   font-size: 2em;
 	color: $default-shade;
-  margin-bottom: 0em;
 }
 
 a {
@@ -68,6 +67,10 @@ a {
 
 strong {
   font-weight: bold;
+}
+
+.section_title {
+	margin-bottom: 0;
 }
 
 blockquote {
@@ -106,6 +109,7 @@ td {
 
  li {
    display: inline;
+	 margin: 1em 1em;
  }
 
  a li i {
