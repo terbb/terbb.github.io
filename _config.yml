@@ -2,7 +2,6 @@
 permalink:      /:year-:month-:day/:title
 
 # Setup
-theme: terb-theme
 title:          the life of terb
 baseurl:        ""
 url:            "https://terbb.github.io"
