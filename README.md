@@ -2,12 +2,11 @@
 This is a custom theme for Jekyll that I built from scratch. I learned a lot of CSS.
 
 ## To-do
-* Clean up CSS into SCSS
-* Re-work everything into one page
-* Make mobile-friendly
+* Continue cleaning up folders and variables and stuff.
+* Add new posts and projects.
 
 ## Technologies
 
-Jekyll, Materialize CSS Framework, Font-Awesome and Google Fonts.
+Jekyll, Bootstrap, Font-Awesome and Google Fonts.
 
 
