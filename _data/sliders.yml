@@ -40,13 +40,35 @@
   captions: true
   images:
     - src: /assets/project/2017-10-08-paper-cut/screenshot1.png
-      alt: instructions screen
+      alt: exciting new gameplay
     - src: /assets/project/2017-10-08-paper-cut/screenshot2.png
-      alt: a passable cut
+      alt: use wild crocodiles
     - src: /assets/project/2017-10-08-paper-cut/screenshot3.png
-      alt: a not very good cut
+      alt: all new modes 
     - src: /assets/project/2017-10-08-paper-cut/screenshot4.png
-      alt: game over screen
+      alt: unpredictable chainsaws
+    - src: /assets/project/2017-10-08-paper-cut/screenshot5.png
+      alt: brand new shop
+    - src: /assets/project/2017-10-08-paper-cut/screenshot6.png
+      alt: tons of achievements to unlock
+  settings:
+    height: "'auto'"
+    effect: "'slide'"
+    keyboardNav: true
+
+- selector: sleightofhands_slider
+  captions: true
+  images:
+    - src: /assets/project/2019-02-03-sleight-of-hands/screenshot1.png
+      alt: punch a bag!
+    - src: /assets/project/2019-02-03-sleight-of-hands/screenshot2.png
+      alt: rub a box
+    - src: /assets/project/2019-02-03-sleight-of-hands/screenshot3.png
+      alt: play simon says
+    - src: /assets/project/2019-02-03-sleight-of-hands/screenshot4.png
+      alt: pop a balloon
+    - src: /assets/project/2019-02-03-sleight-of-hands/screenshot5.png
+      alt: kaboom!
   settings:
     height: "'auto'"
     effect: "'slide'"

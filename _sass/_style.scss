@@ -1,39 +1,44 @@
-// Begin general styling for the website.
-* {
-  @include box-sizing;
-  line-height: 1.5;
-}
-
+// Apply default text styling.
 html,
 body {
-  color: $default-color;
-  margin: 0;
-  padding: 0;
-}
-
-html {
   font-family: $regular_text;
+  color: $default-color;
   font-size: 1em;
-
-  @media (min-width: 600px) {
-    font-size: 1em;
-  }
+  -webkit-text-size-adjust: 100%; // something to do with safari and iphone inflating fonts
 }
 
+// Turn list elements into bullets.
 li {
   list-style-type:disc!important;
-  margin-left:1.5em;   
 }
 
-.container {
-	padding-left: 15em;
-	padding-right: 15em;
+// Responsive CSS.
+@include media-breakpoint-up(sm) {
+	.container {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+@include media-breakpoint-up(md) {
+	.container {
+		padding-left: 5em;
+		padding-right: 5em;
+	}
+}
+@include media-breakpoint-up(lg) {
+	.container {
+		padding-left: 10em;
+		padding-right: 10em;
+	}
+}
+@include media-breakpoint-up(xl) {
+	.container {
+		padding-left: 14em;
+		padding-right: 14em;
+	}
 }
 
-body {
-  -webkit-text-size-adjust: 100%;
-}
-
+// Style headers.
 h1,
 h2,
 h3,
@@ -42,37 +47,58 @@ h5,
 h6 {
   color: $default-shade;
   font-family: $header_text;
-  line-height: normal;
 }
 
+// Reserved for big red title headers.
 h1 { 
   font-family: $header_text;
   font-size: 3.5em;
   font-weight: 400;
 	color: #B71717;
   text-align: center;
-  margin-bottom: 0em;
+	margin-top: 0.5em;
 }
 
+.about {
+	margin-bottom: 1em;
+}
+
+// To style the subtitle underneath the big red title.
+.main_subtitle{
+  font-family: $regular_text;
+	color: $default-color;
+  font-size: 1.2em;
+  margin: 0;
+	padding: 0;
+  text-align: center;
+  margin-bottom: 0.1em;
+  padding-bottom: 0em;
+}
+
+// Reserved for dark, bold headers.
 h2 { 
   font-family: $header_text;
-  font-size: 2em;
+  font-size: 2.2em;
 	color: $default-shade;
+	margin: 0.6em 0;
+	font-weight: 400;
 }
 
+// Reserved for smaller, dark headers.
+h3 { 
+  font-family: $header_text;
+  font-size: 1.5em;
+	color: $default-shade;
+	margin: 0.5em 0;
+}
+
+// Turn links red.
 a {
   color: $main-color;
   text-decoration: none;
 }
 
-strong {
-  font-weight: bold;
-}
-
-.section_title {
-	margin-bottom: 0;
-}
-
+// Style block quotes.
 blockquote {
   border-left: 0.3em solid $main-color;
   color: $grey-1;
@@ -98,9 +124,7 @@ td {
   vertical-align: top;
 }
 
-// Begin styling for default layout.
-//// Begin styling for footer bar.
-
+// Style social media links at the top (github, linkedin)
 .social {
  list-style-type: none;
  margin: 0;
@@ -124,7 +148,7 @@ td {
  }
 }
 
-//// Sticky footer.
+// Sticky footer.
  body {
    display: flex;
    min-height: 100vh;
@@ -135,8 +159,9 @@ td {
    flex: 1 0 auto;
  }
 
-.page-footer {
-  background-color: #B71717;
+.footer {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .meta-info {
@@ -150,23 +175,9 @@ td {
  font-weight: 900;
 }
 
-// Begin styling for about page.
-
-.main_subtitle{
-  font-family: $regular_text;
-	color: $default-color;
-  font-size: 1.2em;
-  margin: 0;
-	padding: 0;
-  text-align: center;
-  margin-bottom: 0.1em;
-  padding-bottom: 0em;
-}
-
-
 // Begin styling for post layout.
 .post {
-  padding: 3rem 0;
+	margin-top: 0.5em;
 
   &-info {
     color: $default-tint;
@@ -206,18 +217,15 @@ td {
 // Begin styling for the post previews on the Blog section.
 
 .catalogue {
-  &-item {
-    border-bottom: 0.1em dashed #B71717;
-    color: $default-color;
-    padding: 1.250em 0px;
-    margin: 0;
-  }
+	&-row {
+		margin-bottom: 1.5em;
+	}
 
   &-time {
     color: $grey-1;
     font-family: $time_text;
-    font-size: 0.813em;
-    letter-spacing: 0.083em;
+    font-size: 1em;
+    letter-spacing: 0.2em;
   }
 
   &-title {
@@ -225,7 +233,8 @@ td {
     display: block;
     font-family: $regular_text;
     font-weight: bold;
-    font-size: 2em;
+		text-align: left;
+    font-size: 1.5em;
     margin: 0;
   }
 
@@ -240,10 +249,4 @@ td {
     width: 6.5em;
     height: 6.5em;
   }
-}
-
-// Begin styling for cards on projects.
-
-.title {
-  margin: 1.250em 0px;
 }

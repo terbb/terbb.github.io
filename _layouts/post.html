@@ -15,6 +15,8 @@ layout: default
   {% if page.project-post %}
   <h5 style="float: right; margin:0;">PROJECT: <a href="{{ page.project-post }}"><span style="color:#B71717;">{{ page.project | upcase }}</span></a></h5>
   {% endif %}
+  {% if page.blog-post %}
+	<h5 style="float: right; margin:0;">BLOG: <a href="{{ page.blog-post }}"><span style="color:#B71717;">{{ page.blog | upcase }}</span></a></h5>
+  {% endif %}
   {{ content }}
-
 </div>

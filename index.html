@@ -2,28 +2,32 @@
 layout: default
 ---
 
-<div class="row">
+<div class="row"> 
 	<h2 class="section_title">About Me</h2>	
-  <p>Hello potential employer,</p>
-	<p>Here's a "fun" list about me:</p>
-	<ul>
-		<li>4th year CPSC student at UBC, proficient in <a href="https://github.com/terbb/cpp-practice">C++</a>, likes video games, computer graphics and VR</li>
-		<li>Released a game <a href="https://play.google.com/store/apps/details?id=com.trevinwong.papercut&hl=en">(Paper Cut)</a> on Play Store</li>
-		<li>Favorite courses are <a href="https://www.cs.ubc.ca/~sheffa/games_course/Vjan19/">Video Game Programming</a> and <a href="https://www.ugrad.cs.ubc.ca/~cs490/2018W2/">Problem Solving in Computer Science</a></li>
-		<li>I really like this computer graphics <a href="https://www.cs.ubc.ca/~van/papers/2018-TOG-deepMimic/index.html">paper</a>, though I still don't understand much</li>
-		<li>Hopes to one day study and develop more realistic <a href="https://www.youtube.com/watch?v=r0RemgIbh8Q&list=PL19CTPR_NFYat8FUj3e-DuMA6aKgAsSWk&index=2">melee combat in VR</a></li>
-		<li>My favorite VR game is <a href="https://www.youtube.com/watch?v=FoErwaxy3HE">Rec Room</a></li>
-		<li>My favorite games are <a href="https://www.youtube.com/watch?v=1w7wQx5-msg">WC3</a> and <a href="https://www.youtube.com/watch?v=SD0uiIF2shA">SSBM</a></li>
-		<li>Part of a community trying to revive a Starcraft 2 custom map called <a href="https://www.youtube.com/watch?v=CpFuJsG5-F4">Smashcraft</a></li>
-		<li>Can take long walks on the beach with you, if that's something you like</li>
-	</ul>
-
-  <p>And here's my <b><a href="/assets/resume.pdf">resume</a></b>.</p>
-
-	If you're not looking to hire me... that's unfortunate. You can check out my blog, I guess (it's at the bottom) if you're into that.
-	I write about my thoughts on video games and other misc. stuff like hackathons I visit.
 </div>
 
+<div class="row about">
+	<p>Welcome stranger, here's a "fun" list about me:</p>
+		<ul>
+			<li>4th year CPSC student at UBC, proficient in <a href="https://github.com/terbb/cpp-practice">C++</a>, likes video games, computer graphics and VR</li>
+			<li>Released a game <a href="https://play.google.com/store/apps/details?id=com.trevinwong.papercut&hl=en">(Paper Cut)</a> on Play Store</li>
+			<li>Favorite courses are <a href="https://www.cs.ubc.ca/~sheffa/games_course/Vjan19/">Video Game Programming</a> and <a href="https://www.ugrad.cs.ubc.ca/~cs490/2018W2/">Problem Solving in Computer Science</a></li>
+			<li>The paper I'm most fascinated by is: <a href="https://www.math.ucla.edu/~jteran/papers/SSCTS13.pdf">"A material point method for snow simulation"</a></li>
+			<li>My favorite VR game is <a href="https://www.youtube.com/watch?v=FoErwaxy3HE">Rec Room</a></li>
+			<li>My favorite games are <a href="https://www.youtube.com/watch?v=1w7wQx5-msg">WC3</a> and <a href="https://www.youtube.com/watch?v=SD0uiIF2shA">SSBM</a></li>
+			<li>Part of a community trying to revive a Starcraft 2 custom map called <a href="https://www.youtube.com/watch?v=CpFuJsG5-F4">Smashcraft</a></li>
+			<li>Can take long walks on the beach with you, if that's something you like</li>
+		</ul>
+
+		<p>And here's my <b><a href="/assets/resume.pdf">resume</a></b>.</p>
+
+		<p>Feel free to check out some of my projects below. I also have a blog where I write about random stuff, like my thoughts on video games, or the hackathons I visit.</p>
+
+		<span>If you have any questions or inquiries, please email <b>trevinwong@gmail.com</b>, since I don't have a comment section. I'd love to answer any questions or just talk about random stuff.</span>
+</div>
+
+
+<!--
 <div class="row">
 <h2 class="section_title">Projects</h2>
 </div>
@@ -34,6 +38,8 @@ layout: default
   {% if mod == 0 %}
     <div class="row">
   {% endif %}
+
+
         <div class="col s6">
           <div class="card">
             <div class="card-image">
@@ -56,32 +62,63 @@ layout: default
               {% endif %}
             </div>
           </div>
-        </div>
+					</div>
 
         {% if mod == 1 %}
           </div>
         {% endif %}
 {% endfor %}
 </div>
-               
+ --!> 
+
 
 <div class="row"> 
-<h2 class="section_title">Blog</h2>
+	<h2 class="section_title">Projects</h2>
 </div>
 
-  {% for post in site.categories['Blog'] %}
-  <div class="row catalogue-item">
+<div class="row">
+{% for post in site.categories['Project'] %}
+<div class="row catalogue-row">
+	<div class="col">
+		<div class="catalogue-title">
+			<a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a> 
+			{% if post.github %}
+				<a href="{{ post.github }}"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+			{% endif %}
+			</div>
+		<time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+		{% for award in post.awards %}
+		<span class="badge badge-warning">{{ award }}</span>
+		{% endfor %}	
+		{% for tag in post.tags %}
+		<span class="badge badge-secondary">{{ tag }}</span>
+		{% endfor %}
+		<p class="catalogue-content">{{ post.excerpt }}</p>
+	</div>
+</div>
+{% endfor %}
+</div>
+                           
+                           
+<div class="row"> 
+	<h2 class="section_title">Blog</h2>
+</div>
 
-          {% capture thumbnailPath %}{{ post.date | date: "%Y-%m-%d" }}-{{ post.title | slugify }}/thumbnail.png{% endcapture %}
-          <div class="col s2 left-align">
-            <img class="catalogue-image" src="/assets/blog/{{ thumbnailPath }}"/>
-          </div>
-          <div class="col s10 left-align">
-              <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-          <a href="{{ post.url | prepend: site.url }}"><p class="catalogue-title">{{ post.title }}</p></a>
-            <p class="catalogue-content">{{ post.excerpt }}</p>
-          </div>
-
-  </div>
-  {% endfor %}
+<div class="row">
+{% for post in site.categories['Blog'] %}
+<div class="row catalogue-row">
+	<div class="col">
+		<a class="catalogue-title" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+		<time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
+		{% for award in post.awards %}
+		<span class="badge badge-warning">{{ award }}</span>
+		{% endfor %}	
+		{% for tag in post.tags %}
+		<span class="badge badge-secondary">{{ tag }}</span>
+		{% endfor %}
+		<p class="catalogue-content">{{ post.excerpt }}</p>
+	</div>
+</div>
+{% endfor %}
+</div>
                            

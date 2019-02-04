@@ -2,6 +2,9 @@
 title: "Migration to Jekyll!"
 excerpt: "No more wordpress!"
 categories: Blog
+tags:
+- Personal
+- Jekyll
 ---
 
 So.
