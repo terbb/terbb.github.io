@@ -13,37 +13,37 @@ It's just a name that I came up with on the spot. Basically, what I'm referring 
 
 Say you're working in C++, and you're trying to `push_back()` a reference of `Foo` you've passed into a `vector<Foo>`. But we're getting a gigantic compile error:
 
-```
+```c++
 error: use of deleted function ‘std::unique_ptr<_Tp, _Dp>::unique_ptr(const std::unique_ptr<_Tp, _Dp>&) [with _Tp = int; _Dp = std::default_delete<int>]’
 ```
 
 Let's assume that we have no idea what the heck this error is talking about (which happens often). Let's look at the class `Foo` first:
 
-```
+```c++
 class Foo {
-	public:
-		Foo();
-		~Foo();	
-		void someRandomFunction();
-		void anotherRandomFunction(int w);
-		std::unique_ptr<int> bar;
-	private: 
-		int x;
-		float y;
-		bool z;
+  public:
+    Foo();
+    ~Foo();
+	void someRandomFunction();
+	void anotherRandomFunction(int w);
+    std::unique_ptr<int> bar;
+  private:
+    int x;
+    float y;
+    bool z;
 };
 ```
 
 Okay, so `Foo`... has a ton of stuff. Let's assume that we've somewhat isolated our problem by heading to the block of code that's causing the compile error:
 
-```
+```c++
 void passInReference(Foo &foo)
 {
   vector<Foo> many_foos;
-	vector<Foo> other_foos;
-	foo.x = foo.x + 1;
-	foo.someRandomFunction();
-  many_foos.push_back(foo);  
+  vector<Foo> other_foos;
+  foo.x = foo.x + 1;
+  foo.someRandomFunction();
+  many_foos.push_back(foo);
 }
 ```
 
@@ -68,13 +68,13 @@ Well, unfortunately, this technique can't really help you with the 1st problem. 
 
 In this case, we've already took out two blocks of code that we suspect are causing the problem. What can we do? Let's create a quick test program to start taking them apart in!
 
-```
+```c++
 int main() {
-	Foo foo;
-	foo.x = 1;
-	foo.bar = std::make_unique<int>(2);
-	passInReference(foo);
-	return 0;
+  Foo foo;
+  foo.x = 1;
+  foo.bar = std::make_unique<int>(2);
+  passInReference(foo);
+  return 0;
 }
 ```
 
@@ -84,13 +84,13 @@ Now, we're still going to run into the error - but guess what? It's way easier t
 
 Furthermore, we can just start taking out random pieces of code without having to `git commit -m "WIP"`, or worse, `ctrl + z` x100, after we've fixed the bug. Let's see a (fake) example of doing so:
 
-```
+```c++
 void passInReference(Foo &foo)
 {
   vector<Foo> many_foos;
-	vector<Foo> other_foos;
-	foo.x = foo.x + 1;
-	foo.someRandomFunction();
+  vector<Foo> other_foos;
+  foo.x = foo.x + 1;
+  foo.someRandomFunction();
 }
 ```
 
@@ -118,7 +118,7 @@ In other words, it saves a lot of time.
 
 Here's an example of how I used prototyping to implement checking components in an ECS system using bitmasks:
 
-```
+```c++
 const int max_size = 8;
 const int transform = 0;
 const int color = 1;

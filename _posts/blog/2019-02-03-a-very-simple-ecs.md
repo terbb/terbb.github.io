@@ -33,7 +33,7 @@ Hence, I'm proposing a very basic implementation that anyone can follow and use.
 
 Let's start with the `Component` class:
 
-```
+```c++
 int const MAX_COMPONENTS = 1;
 int const TRANSFORM_COMPONENT_TYPEID = 0;
 
@@ -45,7 +45,7 @@ public:
 
 Note that `getTypeID()` is a pure virtual function, which means that we can't instantiate `Component`. We can only instantiate it's derived classes. Let's take a `TransformComponent` as an example below:
 
-```
+```c++
 #include "component.hpp"
 
 class TransformComponent : public Component
@@ -69,31 +69,31 @@ We also have any other data that we need. In this case, the `TransformComponent`
 
 Now, our `Entity` class:
 
-```
+```c++
 class Entity {
-	public:
-		Entity();
-		int id;
+  public:
+    Entity();
+    int id;
 
-		template <typename T>
-		T* getComponent()
-		{
-			for (int i = 0; i < components.size(); i++) {
-				if (components[i] != NULL && components[i]->getTypeID() == T::typeID)
-				{
-					return static_cast<T*>(components[i]);
-				}
-			}
-			return nullptr;
-		}
+    template <typename T>
+    T* getComponent()
+    {
+      for (int i = 0; i < components.size(); i++) {
+        if (components[i] != NULL && components[i]->getTypeID() == T::typeID) {
+          return static_cast<T*>(components[i]);
+        }
+	  }
+	  return nullptr;
+	}
 
-		template <typename T>
-		void setComponent(T* component)
-		{
-			components[T::typeID] = component;
-		}
-	private:
-		std::vector<BaseComponent*> components;
+    template <typename T>
+    void setComponent(T* component)
+    {
+      components[T::typeID] = component;
+    }
+
+  private:
+    std::vector<BaseComponent*> components;
 };
 
 Entity::Entity()
@@ -108,17 +108,16 @@ I'll go over this in detail, but in short, every `Entity` has a unique `id`, as 
 
 Next, we have our template functions, which are not actually as spooky as they appear. We'll go over the first one:
 
-```
+```c++
 template <typename T>
 T* getComponent()
 {
-	for (int i = 0; i < components.size(); i++) {
-		if (components[i] != NULL && components[i]->getTypeID() == T::typeID)
-		{
-			return static_cast<T*>(components[i]);
-		}
-	}
-	return nullptr;
+  for (int i = 0; i < components.size(); i++) {
+    if (components[i] != NULL && components[i]->getTypeID() == T::typeID) {
+      return static_cast<T*>(components[i]);
+    }
+  }
+  return nullptr;
 }
 ```
 
@@ -126,11 +125,11 @@ Here, in `getComponent()`, we iterate over all the components of the Entity in a
 
 Well, all we have to do is simply use our `getTypeID()` function to figure out the `typeID` of our component at runtime, and then use the *scope-resolution operator* to compare it to the `Component` type that we're passing in. Easy!
 
-```
+```c++
 template <typename T>
 void setComponent(T* component)
 {
-	components[T::typeID] = component;
+  components[T::typeID] = component;
 }
 ```
 
@@ -140,7 +139,7 @@ Not much to say about this function: we simply use the *scope-resolution operato
 
 All we have to do is create a global vector of `Entity`, and we can start creating and adding objects like so:
 
-```
+```c++
 std::vector<Entity> entities; // global
 
 Entity e;
@@ -153,18 +152,16 @@ All we have to do is define a `System` that takes in our entities, and acts on t
 
 For example,
 
-```
+```c++
 void TransformSystem::moveEntities(std::vector<Entity> &entities)
 {
-
-		for (Entity &e : entities) {
-			TransformComponent *transformComponent = e.getComponent<TransformComponent>();
-
-			if (transformComponent != nullptr) {
-				transformComponent->x += 1;
-				transformComponent->y += 2;	
-			}
-		}
+  for (Entity &e : entities) {
+    TransformComponent *transformComponent = e.getComponent<TransformComponent>();
+    if (transformComponent != nullptr) {
+      transformComponent->x += 1;
+      transformComponent->y += 2;
+    }
+  }
 }
 ```
 

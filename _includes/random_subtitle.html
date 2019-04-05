@@ -1,5 +1,5 @@
 {% assign min = 0 %}
-{% assign max = 20 %}
+{% assign max = 23 %}
 {% assign diff = max | minus: min %}
 {% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
 
@@ -43,7 +43,7 @@ Whose got the hot hands?
 Do you remember, the 21st night of September?
 {% endif %}
 {% if randomNumber == 13 %}
-On the first day of Christmas, my true love gave to me... nothing!
+My potions are too strong for you, traveller.
 {% endif %}
 {% if randomNumber == 14 %}
 Why was 9 afraid of 7? Because 7 8 9.
@@ -65,4 +65,10 @@ You will be shortly redirected to www.traviswong.com...
 {% endif %}
 {% if randomNumber == 20 %}
 Scroll down for extremely exciting content.
+{% endif %}
+{% if randomNumber == 21 %}
+I am going into battle, and I need your strongest potions.
+{% endif %}
+{% if randomNumber == 22 %}
+My name is the dog.
 {% endif %}

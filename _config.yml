@@ -1,35 +1,35 @@
-# Permalinks
-permalink:      /:year-:month-:day/:title
+# Sets the format of the link used to access the post.
+permalink:      :categories/:year/:month/:title
 
-# Setup
-title:          the life of terb
-baseurl:        ""
-url:            "https://terbb.github.io"
+# Site metadata. 
+description: >- # ignore new lines until next specified variable
+  The personal website of Trevin Wong. Check out my blog and my projects here!
 
-# Assets
+# Environment variables.
+github:   https://github.com/terbb
+
+# Specify variables for SASS.
 sass:
-  sass_dir:     _sass
-  style:        :compressed
+  sass_dir:     _sass       # where SASS files will be found
+  style:        :compressed # minify CSS files generated from SASS
 
-# Build settings
-markdown:       kramdown
-highlighter:  rouge
+# Specify external Ruby libraries.
+markdown:     kramdown  # for parsing markdown
+highlighter:  rouge     # for highlighting code snippets 
 
-
-# About
-author:
-  name:         Trevin Wong
-  url:
-  email:        trevinwong@gmail.com
-
-# Custom vars
-github: https://github.com/terbb
-
-# Default layouts
+# Set defaults.
 defaults:
   -
-    scope:
+    scope: # All files with the type "post" will have the "post" layout applied to them by default.
       path: ""
       type: "posts"
     values:
       layout: "post"
+
+# Ignore files.
+exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, LICENSE.txt, CNAME]
+
+# Filter content.
+show_drafts         : null
+future              : false
+unpublished         : false

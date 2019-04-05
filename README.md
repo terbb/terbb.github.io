@@ -1,12 +1,15 @@
-# terb-theme
-This is a custom theme for Jekyll that I built from scratch. I learned a lot of CSS.
+# My Website
 
-## To-do
-* Continue cleaning up folders and variables and stuff.
-* Add new posts and projects.
+Head on over to <www.trevinwong.com> if you'd like to see it! It includes:
 
-## Technologies
+* My projects
+* My blog
 
-Jekyll, Bootstrap, Font-Awesome and Google Fonts.
+## Tech
 
+* [Jekyll](https://jekyllrb.com/)
+* [Jekyll Ideal Image Slider Include](https://github.com/jekylltools/jekyll-ideal-image-slider-include)
+* [Font Awesome](https://fontawesome.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
