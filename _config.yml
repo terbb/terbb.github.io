@@ -27,7 +27,7 @@ defaults:
       layout: "post"
 
 # Ignore files.
-exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, LICENSE.txt, CNAME]
+exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, LICENSE.txt, CNAME, vendor]
 
 # Filter content.
 show_drafts         : null
