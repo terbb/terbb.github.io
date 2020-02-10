@@ -33,3 +33,5 @@ exclude: [.gitignore, Gemfile, Gemfile.lock, README.md, LICENSE.txt, CNAME, vend
 show_drafts         : null
 future              : false
 unpublished         : false
+
+theme: jekyll-theme-minimal
