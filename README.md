@@ -1,4 +1,4 @@
-# terbb.github.io
+# Technologies
 
 * [Jekyll](https://jekyllrb.com/)
 * [Jekyll Ideal Image Slider Include](https://github.com/jekylltools/jekyll-ideal-image-slider-include)
